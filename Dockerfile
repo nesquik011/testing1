@@ -1,10 +1,9 @@
-# NodeSource Docker Images
-# https://github.com/nodesource/docker-node
-FROM nodesource/vivid:6
-MAINTAINER Cheton Wu <cheton@gmail.com>
+FROM node:8
+MAINTAINER "nesquik011" <dream_land_2@hotmail.com>
 
 # cache package.json and node_modules to speed up builds
 ADD package.json package.json
+RUN npm i npm@latest -g
 RUN npm install --production
 RUN npm install -g nodemon
 
